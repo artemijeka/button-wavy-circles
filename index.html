@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Кнопка - расходящиеся волной круги по нажатию | Button-diverging wave circles when pressed</title>
+ <link rel="stylesheet" href="./style.min.css">
+</head>
+<body>
+ 
+ <main>
+
+  <section>
+
+   <button class="button-wavy-circles _1">Кнопка</button>
+   <button class="button-wavy-circles _2">Кнопка</button>
+   <script>
+    var buttons = document.querySelectorAll('.button-wavy-circles');
+    buttons.forEach(function(btn) {
+
+     btn.addEventListener('click', function(e){
+      var x = e.clientX - e.target.offsetLeft;
+      var y = e.clientY - e.target.offsetTop;
+
+      var circle = document.createElement('span');
+      circle.classList.add('circle');
+      circle.style.left = x + 'px';
+      circle.style.top = y + 'px';
+      this.appendChild(circle);
+
+      setTimeout(function(){
+       circle.remove();
+      }, 1000);
+     });
+
+    });
+   </script>
+
+  </section>
+
+ </main>
+
+</body>
+</html>
