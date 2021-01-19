@@ -43,22 +43,25 @@ body {
 
 .circle {
  position: absolute;
+ z-index: 9;
+ display: flex;
  background-color: #fff;
  transform: translate(-50%, -50%);
  pointer-events: none;
  border-radius: 50%;
  animation: wavy-circles 1s ease-in infinite;
+ opacity: 0.25;
 }
 
 @keyframes wavy-circles {
  0% {
   width: 0;
   height: 0;
-  opacity: 0.75;
+  opacity: 0.25;
  }
  100% {
-  width: 1000px;
-  height: 1000px;
+  width: 1500px;
+  height: 1500px;
   opacity: 0;
  }
 
